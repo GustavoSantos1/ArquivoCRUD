@@ -11,10 +11,38 @@ class PESSOA
       char  NOME[41];
       char  DTNASC[11];
     public:
-      void  GETNOME(void);
-      void  GETDTNASC(void);
-      void  SETNOME(char N[41]);
-      void  SETDTNASC(char DT[11]);
+      char STATUS;
+      char *getNome(void)
+      {
+          return NOME;
+      }
+      char *getDtNasc(void)
+      {
+          return DTNASC;
+      }
+      void setNome(char N[41])
+      {
+        int i;
+        for (int i=0; i<strlen(N); i++)
+            N[i] = toupper(N[i]);
+        strcpy(NOME,N);
+        return;
+      }
+      void  setDataNasc(char DT[11])
+      {
+          strcpy(DTNASC,DT);
+          return;
+      }
+
 };
+      char *uppercase(char *N)
+      {
+      int i;
+      for (int i=0; i<strlen(N); i++)
+        N[i] = toupper(N[i]);
+      return N;
+
+      }
+
 
 #endif
